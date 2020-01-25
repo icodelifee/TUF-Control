@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' http://cdnjs.cloudflare.com "> -->
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700&display=swap" rel="stylesheet" />
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+			integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="app.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.2/css/bootstrap-slider.min.css"
+		/>
+		<title>TUF Control</title>
+	</head>
+	<body>
+		<h1 class="appHeader">TUF Control</h1>
+		<div class="container">
+			<div class="fan-settings">
+				<h3>Fan Mode</h3>
+				<div class="card-deck ">
+					<!-- <div class="btn"> -->
+					<div class="card btn btn-fix" id="normal" style="width: 18rem;height: 8rem;">
+						<div class="card-body">
+							<h5 class="card-title" id="normal-title">NORMAL</h5>
+						</div>
+					</div>
+					<!-- </div> -->
+					<div class="card btn btn-fix" id="boost" style="width: 18rem;height: 8rem;">
+						<div class="card-body">
+							<h5 class="card-title" id="boost-title">BOOST</h5>
+						</div>
+					</div>
+					<div class="card btn btn-fix" id="silent" style="width: 18rem;height: 8rem;">
+						<div class="card-body">
+							<h5 class="card-title" id="silent-title">SILENT</h5>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="rgb-settings">
+				<h3>Keyboard Setting</h3>
+				<h4>Adjust Brightness</h4>
+				<div class="brightness">
+					<input
+						id="ex1"
+						data-slider-id="ex1Slider"
+						type="text"
+						data-slider-min="0"
+						data-slider-max="2"
+						data-slider-step="1"
+						data-slider-value="14"
+					/>
+					<span id="ex6CurrentSliderValLabel"
+						>Current Brightness Value: <span id="ex6SliderVal">3</span></span
+					>
+				</div>
+				<h4>Keyboard Effects</h4>
+				<div class="btn-group btn-group-toggle" data-toggle="buttons">
+					<label class="btn btn-secondary active">
+						<input type="radio" name="mode" id="0" autocomplete="off" checked /> Static Color
+					</label>
+					<label class="btn btn-secondary">
+						<input type="radio" name="mode" id="1" autocomplete="off" /> Breathing
+					</label>
+					<label class="btn btn-secondary">
+						<input type="radio" name="mode" id="2" autocomplete="off" /> Color Cycle
+					</label>
+					<label class="btn btn-secondary">
+						<input type="radio" name="mode" id="3" autocomplete="off" /> Strobing
+					</label>
+				</div>
+				<h4>Speed</h4>
+				<div class="btn-group btn-group-toggle" id="btn-speed" data-toggle="buttons">
+					<label class="btn btn-secondary active">
+						<input type="radio" name="speed" id="0" autocomplete="off" checked /> Slow
+					</label>
+					<label class="btn btn-secondary">
+						<input type="radio" name="speed" id="1" autocomplete="off" /> Medium
+					</label>
+					<label class="btn btn-secondary">
+						<input type="radio" name="speed" id="2" autocomplete="off" /> Fast
+					</label>
+				</div>
+			</div>
+		</div>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.2/bootstrap-slider.min.js"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+			integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+			integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+			integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+			crossorigin="anonymous"
+		></script>
+
+		<script src="app.js"></script>
+	</body>
+</html>

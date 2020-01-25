@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700&display=swap');
+* {
+	font-family: 'Montserrat', sans-serif !important;
+}
+*:focus {
+	outline: 0 !important;
+}
+body {
+	background: linear-gradient(45deg, #a73737, #7a2828);
+	/* background-repeat: none; */
+	color: white;
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	transition: background 2s;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+.appHeader {
+	font-weight: 700;
+	font-size: 50px;
+	padding-left: 19px;
+	padding-top: 10px;
+	cursor: pointer;
+}
+
+.container {
+	padding-left: 0px;
+	margin: 20px;
+}
+.fan-settings > h3 {
+	padding-bottom: 10px;
+	font-weight: 600;
+}
+.card {
+	transition: transform 0.2s;
+}
+
+.card:hover {
+	transform: scale(1.1);
+}
+.card-title {
+	padding-top: 15px;
+}
+.btn-fix {
+	padding: 0;
+	border: none;
+	outline: none;
+	white-space: normal;
+	color: black;
+	text-align: left;
+}
+
+.card-title {
+	color: black;
+	font-weight: 600;
+	text-align: center;
+	font-size: 50px;
+}
+
+.rgb-settings > h3 {
+	padding-top: 20px;
+	font-weight: 600;
+}
+.rgb-settings > h4 {
+	font-size: 20px;
+	padding-left: 9px;
+	padding-top: 20px;
+}
+
+.brightness {
+	padding-left: 15px;
+	padding-top: 5px;
+}
+#ex1Slider .slider-selection {
+	background: #bababa;
+}
+#ex1Slider {
+	width: 500px;
+}
+
+#ex6CurrentSliderValLabel {
+	padding-left: 20px;
+}
+.btn-group {
+	padding-top: 15px;
+	padding-left: 10px;
+}
+
