@@ -67,6 +67,11 @@ body {
 	padding-left: 9px;
 	padding-top: 20px;
 }
+.col > h4 {
+	font-size: 20px;
+	padding-top: 20px;
+	padding-left: 10px;
+}
 
 .brightness {
 	padding-left: 15px;
@@ -75,15 +80,16 @@ body {
 #ex1Slider .slider-selection {
 	background: #bababa;
 }
-#ex1Slider {
-	width: 500px;
-}
 
-#ex6CurrentSliderValLabel {
-	padding-left: 20px;
-}
 .btn-group {
 	padding-top: 15px;
 	padding-left: 10px;
 }
-
+.cp > h4 {
+	font-size: 20px;
+	padding-top: -10px;
+}
+.cp {
+	padding-left: 10px;
+	padding-top: 13px;
+}

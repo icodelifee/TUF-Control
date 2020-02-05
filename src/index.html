@@ -16,6 +16,8 @@
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.2/css/bootstrap-slider.min.css"
 		/>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css" />
+		<!-- 'nano' theme -->
 		<title>TUF Control</title>
 	</head>
 	<body>
@@ -45,47 +47,60 @@
 			</div>
 			<div class="rgb-settings">
 				<h3>Keyboard Setting</h3>
-				<h4>Adjust Brightness</h4>
-				<div class="brightness">
-					<input
-						id="ex1"
-						data-slider-id="ex1Slider"
-						type="text"
-						data-slider-min="0"
-						data-slider-max="2"
-						data-slider-step="1"
-						data-slider-value="14"
-					/>
-					<span id="ex6CurrentSliderValLabel"
-						>Current Brightness Value: <span id="ex6SliderVal">3</span></span
-					>
+				<div class="row">
+					<div class="col">
+						<h4>Adjust Brightness</h4>
+						<div class="btn-group btn-group-toggle" data-toggle="buttons">
+							<label class="btn btn-secondary active">
+								<input type="radio" name="brightness" id="0" autocomplete="off" checked /> Low
+							</label>
+							<label class="btn btn-secondary">
+								<input type="radio" name="brightness" id="1" autocomplete="off" /> Med
+							</label>
+							<label class="btn btn-secondary">
+								<input type="radio" name="brightness" id="2" autocomplete="off" /> High
+							</label>
+						</div>
+					</div>
+					<div class="col">
+						<h4>Speed</h4>
+						<div class="col-sm btn-group btn-group-toggle" id="btn-speed" data-toggle="buttons">
+							<label class="btn btn-secondary active">
+								<input type="radio" name="speed" id="0" autocomplete="off" checked /> Slow
+							</label>
+							<label class="btn btn-secondary">
+								<input type="radio" name="speed" id="1" autocomplete="off" /> Medium
+							</label>
+							<label class="btn btn-secondary">
+								<input type="radio" name="speed" id="2" autocomplete="off" /> Fast
+							</label>
+						</div>
+					</div>
 				</div>
-				<h4>Keyboard Effects</h4>
-				<div class="btn-group btn-group-toggle" data-toggle="buttons">
-					<label class="btn btn-secondary active">
-						<input type="radio" name="mode" id="0" autocomplete="off" checked /> Static Color
-					</label>
-					<label class="btn btn-secondary">
-						<input type="radio" name="mode" id="1" autocomplete="off" /> Breathing
-					</label>
-					<label class="btn btn-secondary">
-						<input type="radio" name="mode" id="2" autocomplete="off" /> Color Cycle
-					</label>
-					<label class="btn btn-secondary">
-						<input type="radio" name="mode" id="3" autocomplete="off" /> Strobing
-					</label>
-				</div>
-				<h4>Speed</h4>
-				<div class="btn-group btn-group-toggle" id="btn-speed" data-toggle="buttons">
-					<label class="btn btn-secondary active">
-						<input type="radio" name="speed" id="0" autocomplete="off" checked /> Slow
-					</label>
-					<label class="btn btn-secondary">
-						<input type="radio" name="speed" id="1" autocomplete="off" /> Medium
-					</label>
-					<label class="btn btn-secondary">
-						<input type="radio" name="speed" id="2" autocomplete="off" /> Fast
-					</label>
+				<div class="row">
+					<div class="col">
+						<h4>Keyboard Effects</h4>
+						<div class="btn-group btn-group-toggle" data-toggle="buttons">
+							<label class="btn btn-secondary active">
+								<input type="radio" name="mode" id="0" autocomplete="off" checked /> Static Color
+							</label>
+							<label class="btn btn-secondary">
+								<input type="radio" name="mode" id="1" autocomplete="off" /> Breathing
+							</label>
+							<label class="btn btn-secondary">
+								<input type="radio" name="mode" id="2" autocomplete="off" /> Color Cycle
+							</label>
+							<label class="btn btn-secondary">
+								<input type="radio" name="mode" id="3" autocomplete="off" /> Strobing
+							</label>
+						</div>
+					</div>
+					<div class="col">
+						<h4>Color Picker</h4>
+						<div class="cp">
+							<div class="color-picker"></div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -108,7 +123,7 @@
 			integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
 			crossorigin="anonymous"
 		></script>
-
+		<script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
 		<script src="app.js"></script>
 	</body>
 </html>

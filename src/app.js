@@ -1,26 +1,61 @@
 var shell = require('shelljs');
-var Slider = require('bootstrap-slider');
 var sudo = require('sudo-prompt');
+var fs = require('fs');
+var Pickr = require('@simonwep/pickr');
 shell.config.execPath = shell.which('node').toString();
 
 var options = {
 	name: 'Electron',
 };
-sudo.exec('chmod -R o+rwx /sys/devices/platform/faustus/fan_mode /sys/devices/platform/faustus/leds/asus::kbd_backlight/brightness /sys/devices/platform/faustus/kbbl/*', options, function(error, stdout, stderr) {
-	if (error) throw error;
-	console.log('stdout: ' + stdout);
-});
+// sudo.exec(
+// 	'chmod -R o+rwx /sys/devices/platform/faustus/fan_mode /sys/devices/platform/faustus/leds/asus::kbd_backlight/brightness /sys/devices/platform/faustus/kbbl/*',
+// 	options,
+// 	function(error, stdout, stderr) {
+// 		if (error) throw error;
+// 		console.log('stdout: ' + stdout);
+// 	}
+// );
 
 var normalBtn = document.getElementById('normal');
 var boostBtn = document.getElementById('boost');
 var silentBtn = document.getElementById('silent');
 
-var slider = new Slider('#ex1', {
-	formatter: function(value) {
-		// shell.exec(`echo "${value}" > /sys/devices/platform/faustus/leds/asus::kbd_backlight/brightness`);
-		document.getElementById('ex6SliderVal').textContent = value;
+const pickr = Pickr.create({
+	el: '.color-picker',
+	theme: 'nano', 
+	padding: 8,
+	// or 'monolith', or 'nano'
+	swatches: [
+		'#ED1000',
+		'#FF0057',
+		'#2BFF01',
+		'#FF00E5',
+		'#005CFF',
+	],
+	components: {
+		hue: true,
+		preview: true,
+		interaction: {
+			hex: true,
+			input: true,
+			clear: true,
+			save: true,
+		},
 	},
 });
+pickr.on('save', (color, instance) => {
+	try {
+		var data = fs.readFileSync('/sys/devices/platform/faustus/kbbl/kbbl_mode', 'utf8');
+		shell.exec(
+			'bash ' +
+				__dirname +
+				`/shell/color.sh ${color.toHEXA()[0]} ${color.toHEXA()[1]} ${color.toHEXA()[2]} ${data.toString()}`
+		);
+	} catch (e) {
+		console.log('Error:', e.stack);
+	}
+});
+
 document.getElementById('btn-speed').disabled = true;
 $('input:radio').on('click', function(e) {
 	if (e.target.name === 'mode') {
@@ -32,6 +67,8 @@ $('input:radio').on('click', function(e) {
 		shell.exec('bash ' + __dirname + '/shell/mode.sh ' + e.currentTarget.id);
 	} else if (e.target.name === 'speed' && document.getElementById('btn-speed').disabled === false) {
 		shell.exec('bash ' + __dirname + '/shell/speed.sh ' + e.currentTarget.id);
+	} else if (e.target.name === 'brightness') {
+		shell.exec(`echo "${e.currentTarget.id}" > /sys/devices/platform/faustus/leds/asus::kbd_backlight/brightness`);
 	}
 });
 
