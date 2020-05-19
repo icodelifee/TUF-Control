@@ -1,5 +1,4 @@
 const shell = require('shelljs');
-const fs = require('fs');
 const paths = require('./path');
 const permsHandler = require('./utils/permshandler');
 const pickr = require('./components/picker');
@@ -8,7 +7,9 @@ shell.config.execPath = shell.which('node').toString();
 // TODO
 // Read and update the current config on startup
 // Handle two type of fan
-$('#btn-speed').prop('disabled', true);
+$(document).ready(function (e) {
+	$('#btn-speed').prop('disabled', true);
+});
 
 permsHandler();
 
