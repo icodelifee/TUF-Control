@@ -16,7 +16,7 @@ permsHandler();
 pickr.on('save', (color, instance) => {
 	//change color of the keyboard
 	try {
-		const splitHex = `${color.toHEXA()[0]} ${color.toHEXA()[1]} ${color.toHEXA()[2]} ${data.toString()}`;
+		const splitHex = `${color.toHEXA()[0]} ${color.toHEXA()[1]} ${color.toHEXA()[2]}`;
 		shell.exec('bash ' + __dirname + `/shell/color.sh ${splitHex}`);
 	} catch (e) {
 		console.log('Error:', e.stack);
