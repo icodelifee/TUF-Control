@@ -1,4 +1,4 @@
-# TUF-Control [WIP]
+# TUF-Control [DISCONTINUED AS I DONT OWN DEVICE ANYMORE]
 A Keyboard Lighting And Fan Mode Controller 🎛 GUI App For <a href="https://github.com/hackbnw/faustus">hackbnw/faustus</a> Driver Module For ASUS TUF Gaming Series Laptops💻
 
 <img src="https://github.com/icodelifee/TUF-Control/raw/master/images/ss.png"/> 
